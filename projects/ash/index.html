@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Extremely Simple Activation Shaping for Out-of-Distribution Detection.">
+  <meta name="keywords" content="OOD, Out-of-distribution detection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASH: Extremely Simple Activation Shaping for Out-of-Distribution Detection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>-->
+<!--  <script>-->
+<!--    window.dataLayer = window.dataLayer || [];-->
+
+<!--    function gtag() {-->
+<!--      dataLayer.push(arguments);-->
+<!--    }-->
+
+<!--    gtag('js', new Date());-->
+
+<!--    gtag('config', 'G-PYVRSFMDRL');-->
+<!--  </script>-->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../static/css/index.css">
+  <!--<link rel="icon" href="../../static/images/favicon.svg">-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../static/js/fontawesome.all.min.js"></script>
+  <script src="../../static/js/bulma-carousel.min.js"></script>
+  <script src="../../static/js/bulma-slider.min.js"></script>
+  <script src="../../static/js/index.js"></script>
+</head>
+<body>
+
+<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
+<!--  <div class="navbar-brand">-->
+<!--    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">-->
+<!--      <span aria-hidden="true"></span>-->
+<!--      <span aria-hidden="true"></span>-->
+<!--      <span aria-hidden="true"></span>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="navbar-menu">-->
+<!--    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">-->
+<!--      <a class="navbar-item" href="https://andrijazz.github.io">-->
+<!--      <span class="icon">-->
+<!--          <i class="fas fa-home"></i>-->
+<!--      </span>-->
+<!--      </a>-->
+
+<!--      <div class="navbar-item has-dropdown is-hoverable">-->
+<!--        <a class="navbar-link">-->
+<!--          More Research-->
+<!--        </a>-->
+<!--        <div class="navbar-dropdown">-->
+<!--          <a class="navbar-item" href="https://andrijazz.github.io/ash">-->
+<!--            ASH-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</nav>-->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Extremely Simple Activation Shaping for Out-of-Distribution Detection</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://andrijazz.github.io">Andrija Djurisic</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=zRR0KDYAAAAJ&hl=it">Nebojsa Bozanic</a><sup>1,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://ashok-arjun.github.io/">Arjun Ashok</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://www.rosanneliu.com">Rosanne Liu</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><sup>1</sup>ML Collective,</span>
+            <span class="author-block"><sup>2</sup>Google Research, Brain Team,</span>
+            <span class="author-block"><sup>3</sup>Faculty of Technical Sciences, University of Novi Sad</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#video"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/andrijazz/ash"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+<!--      <video id="teaser" autoplay muted loop playsinline height="100%">-->
+<!--        <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+      <img id="overview" src="./resources/fig1.png">
+      <h2 class="subtitle has-text-centered">
+        Pick a layer, simplify its representation, feed it through the rest of the network. Accuracy is not affected and OOD detection is much better!
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>The separation between training and deployment of machine learning models implies that not all scenarios encountered in deployment can be anticipated during training, and therefore relying solely on advancements in training has its limits.
+Out-of-distribution (OOD) detection is an important area that stress-tests a model’s ability to handle unseen situations: <i>Do models know when they don’t know?</i>
+Existing OOD detection methods either incur extra training steps, additional data or make nontrivial modifications to the trained network. In contrast, in this work, we propose an extremely simple, post-hoc, on-the-fly activation shaping method, <strong>ASH</strong>, where a large portion (e.g. 90%) of a sample's activation at a late layer is removed, and the rest (e.g. 10%) simplified or lightly adjusted. The shaping is applied at inference time, and does not require any statistics calculated from training data.
+Experiments show that such a simple treatment enhances in-distribution and out-of-distribution sample distinction so as to allow state-of-the-art OOD detection on ImageNet, and does not noticeably deteriorate the in-distribution accuracy.
+We release alongside the paper two calls for explanation and validation, believing that collectively we'd have a better chance understanding and validating the discovery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Video-->
+<section class="hero teaser">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">How it works</h2>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+<!--      <video id="teaser" autoplay muted loop playsinline height="100%">-->
+      <video id="video" width="500" controls>
+        <source src="https://storage.googleapis.com/andrijazz/ash/ash_v1.mp4" type="video/mp4">
+      </video>
+<!--      <img src="https://storage.googleapis.com/andrijazz/ash/ash.gif">-->
+    </div>
+  </div>
+</section>
+
+
+<section id="calls" class="hero is-light is-small">
+  <div class="container is-max-desktop">
+    <!-- Calls. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Call for Explanation and Validation</h2>
+        <div class="content has-text-justified">
+          <p>We are releasing two calls alongside this paper to encourage scientific interactions and collaborations. The two calls are invitation to fellow researchers to address two questions that are not yet sufficiently answered by this work:
+          <ol>
+            <li>What are possible explanations of the effectiveness of ASH, a simple activation pruning and adjusting technique, on ID and OOD performance?</li>
+            <li>Are there other research domains, application areas, topics and tasks where ASH (or a similar procedure) is applicable, and what are the findings?</li>
+          </ol>
+          We provide possible directions to answer each call, however we encourage novel answers and explorations beyond what's suggested below:
+          </p>
+          <p>
+            <strong>Call for explanation.</strong> A possible explanation of the effectiveness of ASH is that our overparameterized networks likely overdo representation learning—generating features for data that are largely redundant for the optimization task at hand. It is both an advantage and a peril: on the one hand the representation is less likely to overfit to a single task and might retain more potential to generalize, but on the other hand it serves a poorer discriminator between data seen and unseen.
+          </p>
+          <p>
+            <strong>Call for validation.</strong> We think any domains that use a deep neural network (or a similar intelligent system) to learn representations of data when optimizing for a training task would be fertile ground for validating ASH. A straightforward domain is natural language processing, where pretrained language models are often adapted for downstream tasks. Are native representations learned with those large language models simplifiable? Would reshaping of activations (in the case of transformer-based language models, activations can be keys, values or queries) enhance or damage the performance?
+          </p>
+          <p>
+            Feel free to email us at <a href="mailto:rosanneliu@google.com">rosanneliu@google.com</a> and let us know about your ideas.
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Bibtex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+<!--    <div class="content has-text-centered">-->
+<!--      <a class="icon-link"-->
+<!--         href="">-->
+<!--        <i class="fas fa-file-pdf"></i>-->
+<!--      </a>-->
+<!--      <a class="icon-link" href="https://github.com/andrijazz" class="external-link" disabled>-->
+<!--        <i class="fab fa-github"></i>-->
+<!--      </a>-->
+<!--    </div>-->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
