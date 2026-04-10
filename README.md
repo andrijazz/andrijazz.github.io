@@ -1,6 +1,8 @@
 # andrijazz.github.io
 
-Personal site hosted on GitHub Pages. Built with Next.js (static export).
+My personal site hosted on GitHub Pages. Built with Next.js (static export).
+
+Visit [andrijazz.github.io](https://andrijazz.github.io).
 
 ## Development
 
@@ -8,8 +10,6 @@ Personal site hosted on GitHub Pages. Built with Next.js (static export).
 npm install
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
 
 ## Content
 
