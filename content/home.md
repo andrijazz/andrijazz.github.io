@@ -7,7 +7,7 @@ Hi, this is Andrija. I am an engineer and researcher based in Belgrade, Serbia. 
 <div class="project-list">
 
 <a href="https://arxiv.org/abs/2409.01175" class="project-card">
-<img src="/lts/resources/lts.jpg" alt="LTS overview" />
+<img src="/lts/resources/lts.webp" alt="LTS overview" />
 <div class="project-info">
 <strong>LTS</strong>
 <span>Logit Scaling for Out-of-Distribution Detection</span>
