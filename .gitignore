@@ -1,2 +1,5 @@
 _data/
 .idea
+node_modules/
+.next/
+out/
