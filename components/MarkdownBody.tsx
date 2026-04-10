@@ -18,8 +18,8 @@ export function MarkdownBody({ markdown, className }: Props) {
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[rehypeRaw, rehypeKatex, rehypeHighlight]}
         components={{
-          a: ({ node: _n, ...props }) => (
-            <a {...props} className="md-link" />
+          a: ({ node: _n, className, ...props }) => (
+            <a {...props} className={className ?? "md-link"} />
           ),
         }}
       >
