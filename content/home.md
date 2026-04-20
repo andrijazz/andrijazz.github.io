@@ -1,5 +1,5 @@
 <p>
-Hi, this is Andrija. I am an engineer and researcher based in Belgrade, Serbia. I currently work at <a href="https://adaptionlabs.ai/">adaptionlabs.ai</a> on evolving multimodal data pipelines. Previously, I worked at <a href="https://pixa.com">pixa</a> (formerly known as pixelcut.ai) on adapting diffusion models. I am also a PhD student at University of Belgrade, working with Prof. Mladen Nikolic on out-of-distribution detection and generalization.
+Hi, this is Andrija. I am an engineer and researcher based in Belgrade, Serbia. I currently work at <a href="https://adaptionlabs.ai/">adaptionlabs.ai</a> on adaptive data platform. Previously, I worked at <a href="https://pixa.com">pixa</a> (formerly known as pixelcut.ai) on adapting diffusion models. I am also a PhD student at University of Belgrade, working with Prof. Mladen Nikolic on out-of-distribution detection and generalization.
 </p>
 
 ## Projects
