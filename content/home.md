@@ -6,6 +6,15 @@ Hi, this is Andrija. I am an engineer and researcher based in Belgrade, Serbia. 
 
 <div class="project-list">
 
+<a href="https://arxiv.org/abs/2610.01674" class="project-card">
+<img src="/invent-a-dataset/invent-poster.png" alt="Invent A Dataset"/>
+<div class="project-info">
+<strong>Invent A Dataset</strong>
+<span>Invent A Dataset</span>
+<span class="project-venue">Adaption, Technical Report 2026</span>
+</div>
+</a>
+
 <a href="https://arxiv.org/abs/2409.01175" class="project-card">
 <img src="/lts/resources/lts.webp" alt="LTS overview" />
 <div class="project-info">
