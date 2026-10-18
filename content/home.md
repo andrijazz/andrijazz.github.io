@@ -10,7 +10,7 @@ Hi, this is Andrija. I am an engineer and researcher based in Belgrade, Serbia. 
 <img src="/invent-a-dataset/invent-poster.png" alt="Invent A Dataset"/>
 <div class="project-info">
 <strong>Invent A Dataset</strong>
-<span>Invent A Dataset</span>
+<span>Measuring dataset generation abilities with zero seed </span>
 <span class="project-venue">Adaption, Technical Report 2026</span>
 </div>
 </a>
